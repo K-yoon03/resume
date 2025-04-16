@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>고윤 이력서</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      display: flex;
+      height: 100vh;
+    }
+
+    /* 사이드바 */
+    .sidebar {
+      width: 200px;
+      background-color: #fff;
+      padding: 20px;
+      border-right: 1px solid #ddd;
+      overflow-y: auto;
+    }
+
+    .sidebar h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: teal;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+      cursor: pointer;
+      color: #333;
+    }
+
+    .sidebar ul li a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    .sidebar ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      flex: 1;
+      padding: 40px;
+      background-color: #fff;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section h2 {
+      border-bottom: 2px solid #000;
+      padding-bottom: 5px;
+      font-size: 20px;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .highlight {
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    .subinfo {
+      color: #555;
+    }
+
+    .photo {
+      width: 150px;
+      height: 150px;
+      border: 2px solid #ccc;
+      object-fit: cover;
+    }
+
+    a {
+      color: teal;
+      text-decoration: none;
+    }
+
+    .url-box {
+      border: 1px solid #ccc;
+      padding: 10px;
+      background-color: #f0f0f0;
+      font-family: monospace;
+      word-break: break-all;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h3><a href="#basic">기본 정보</a></h3>
+    <ul>
+      <li><a href="#skills">기술 스택</a></li>
+      <li><a href="#career">경력</a></li>
+      <li><a href="#portpolio">포트폴리오</a></li>
+      <li><a href="#education">교육</a></li>
+      <li><a href="#cerificate">수상 및 자격</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <div class="section">
+      <div class="profile">
+        <div>
+          <div class="highlight">고윤 - 개발자 이력서 sample</div>
+          <div class="subinfo">백엔드 개발자</div>
+          <p>이메일: yoonnyang1013@gmail.com</p>
+        </div>
+        <img src="image.png" alt="프로필 사진" class="photo" />
+      </div>
+    </div>
+
+    <div class="section" id="skills">
+      <h2>기술 스택</h2>
+      <p>Front End : React</p>
+    </div>
+
+    <div class="section" id="career">
+      <h2>경력</h2>
+      <p><strong>졸업작품 프로젝트</strong> - Unity 엔진을 사용한 Top View 2D Pixel 게임 / 백엔드 개발 (2025.03 ~ )</p>
+      <p>∙ 요구사항 분석 및 DataBase 모델링</p>
+      <p>∙ AWS를 활용한 컴퓨팅 환경 구축</p>
+    </div>
+
+    <div class="section" id="portpolio">
+        <h2>포트폴리오</h2>
+        <p><strong>URL</strong> </p>
+        <div class="url-box">
+            https://github.com/K-yoon03
+        </div>
+    </div>
+
+    <div class="section" id ="education">
+        <h2>교육</h2>
+        <p><strong>동양미래대학교</strong> - 컴퓨터소프트웨어공학과 (2023.03 ~ )</p>
+    </div>
+
+    <div class="section" id="cerificate">
+        <h2>수상 및 자격</h2>
+        <p>∙ Top view 2d Pixel Game (Ubity/C#)</p>
+        <p>∙ SQL 개발자 자격증 	( 2024.09.20 )</p>
+    </div>
+
+  </div>
+</body>
+</html>
