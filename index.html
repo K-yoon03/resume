@@ -1,189 +1,231 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Koyoon 이력서</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f9fa;
-      display: flex;
-      height: 100vh;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Koyoon 이력서</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* 폰트 스택 통일 */
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e1e; /* 다크 테마 배경 */
+            color: #e0e0e0; /* 기본 텍스트 색상 */
+            display: flex;
+            height: 100vh;
+        }
 
-    /* 사이드바 */
-    .sidebar {
-      width: 200px;
-      background-color: #fff;
-      padding: 20px;
-      border-right: 1px solid #ddd;
-      overflow-y: auto;
-    }
+        /* 사이드바 */
+        .sidebar {
+            width: 200px;
+            background-color: #1e1e1e; /* 사이드바 배경 */
+            padding: 20px;
+            border-right: 1px solid #333; /* 어두운 경계선 */
+            overflow-y: auto;
+        }
 
-    .sidebar h3 {
-      font-size: 16px;
-      margin-bottom: 10px;
-      color: teal;
-    }
+        .sidebar h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #4dc0c0; /* 하이라이트 색상 */
+        }
 
-    .sidebar ul {
-      list-style: none;
-      padding: 0;
-    }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
 
-    .sidebar ul li {
-      margin: 10px 0;
-      cursor: pointer;
-      color: #333;
-    }
+        .sidebar ul li {
+            margin: 8px 0; /* 간격 조정 */
+            cursor: pointer;
+            color: #e0e0e0;
+        }
 
-    .sidebar ul li a {
-      color: #333;
-      text-decoration: none;
-    }
+        .sidebar ul li a {
+            color: #e0e0e0;
+            text-decoration: none;
+        }
 
-    .sidebar ul li a:hover {
-      text-decoration: underline;
-    }
+        .sidebar ul li a:hover {
+            text-decoration: underline;
+            color: #4dc0c0; /* 호버 시 하이라이트 */
+        }
 
-    .content {
-      flex: 1;
-      padding: 40px;
-      background-color: #fff;
-    }
+        .content {
+            flex: 1;
+            padding: 40px;
+            background-color: #1e1e1e; /* 콘텐츠 배경 */
+        }
 
-    .section {
-      margin-bottom: 40px;
-    }
+        .section {
+            margin-bottom: 40px;
+        }
 
-    .section h2 {
-      border-bottom: 2px solid #000;
-      padding-bottom: 5px;
-      font-size: 20px;
-    }
+        .section h2 {
+            border-bottom: 2px solid #4dc0c0; /* 하이라이트 색상으로 변경 */
+            padding-bottom: 5px;
+            font-size: 20px;
+            color: #fff;
+        }
 
-    .profile {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+        .profile {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-    .highlight {
-      font-size: 26px;
-      font-weight: bold;
-    }
+        .highlight {
+            font-size: 26px;
+            font-weight: bold;
+            color: #fff; /* 메인 하이라이트 색상 */
+        }
 
-    .subinfo {
-      color: #555;
-    }
+        .subinfo {
+            color: #a0a0a0; /* 서브 텍스트 색상 */
+        }
 
-    .photo {
-      width: 150px;
-      height: 150px;
-      border: 2px solid #ccc;
-      object-fit: cover;
-    }
+        .photo {
+            width: 150px;
+            height: 150px;
+            border: 2px solid #444; /* 어두운 테두리 */
+            object-fit: cover;
+        }
 
-    a {
-      color: teal;
-      text-decoration: none;
-    }
+        a {
+            color: #4dc0c0; /* 링크 하이라이트 색상 */
+            text-decoration: none;
+        }
 
-    .url-box {
-      border: 1px solid #ccc;
-      padding: 10px;
-      background-color: #f0f0f0;
-      font-family: monospace;
-      word-break: break-all;
-    }
+        /* 일반적인 텍스트 단락 간격 조정 */
+        .section p {
+            margin: 5px 0;
+        }
 
-  </style>
+        .url-box {
+            border: 1px solid #444;
+            padding: 10px;
+            background-color: #2a2a2a; /* 어두운 박스 배경 */
+            font-family: monospace;
+            word-break: break-all;
+        }
+
+        /* 목록 간격 조정 */
+        .section ul {
+            list-style: disc; /* 기본 불릿 */
+            margin-top: 5px;
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        /* 활용 경험 섹션의 메인 언어 항목 스타일링 */
+        #Experiences > ul > li {
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            list-style-type: none; /* 언어 이름 불릿 제거 */
+            color: #fff; /* 언어 이름은 흰색으로 강조 */
+        }
+
+        /* 활용 경험 섹션의 서브 목록 (경험 내용) 스타일링 */
+        #Experiences > ul ul {
+            margin-top: 2px;
+            margin-bottom: 2px;
+            padding-left: 15px; /* 들여쓰기 */
+            list-style-type: circle; /* 서브 불릿 모양 변경 */
+        }
+
+        #Experiences > ul ul li {
+            font-weight: normal;
+            margin-bottom: 3px; /* 서브 항목 간격 */
+            color: #e0e0e0;
+        }
+
+        .footer-divider {
+            border-top: 2px solid #4dc0c0; /* H2에 사용된 파란색(#4dc0c0)과 동일 */
+            margin-top: 0px;
+            width: 100%;
+            height : 300px;
+        }
+    </style>
 </head>
 <body>
-  <div class="sidebar">
-    <h3><a href="#basic">기본 정보</a></h3>
-    <ul>
-      <li><a href="#skills">기술 스택</a></li>
-      <li><a href="Experiences">활용 경험</a></li>
-      <!-- <li><a href="#career">경력</a></li> 나중에 채워넣기! !-->
-      <li><a href="#portpolio">포트폴리오</a></li>
-      <li><a href="#education">교육</a></li>
-      <li><a href="#cerificate">수상 및 자격</a></li>
-    </ul>
-  </div>
+    <div class="sidebar">
+        <h3><a href="#basic">기본 정보</a></h3>
+        <ul>
+            <li><a href="#skills">기술 스택</a></li>
+            <li><a href="Experiences">활용 경험</a></li>
+            <li><a href="#portpolio">포트폴리오</a></li>
+            <li><a href="#education">교육</a></li>
+            <li><a href="#cerificate">수상 및 자격</a></li>
+        </ul>
+    </div>
 
-  <div class="content">
-    <div class="section">
-      <div class="profile">
-        <div>
-          <div class="highlight">고윤 개발자 이력서</div>
-          <div class="subinfo">소프트웨어 개발자</div>
-          <p>이메일: yoonnyang1013@gmail.com</p>
+    <div class="content">
+        <div class="section">
+            <div class="profile">
+                <div>
+                    <div class="highlight">고윤 개발자 이력서</div>
+                    <div class="subinfo">소프트웨어 개발자</div>
+                    <p>이메일: yoonnyang1013@gmail.com</p>
+                </div>
+                <img src="Main-Image.jpg" alt="프로필 사진" class="photo"/>
+            </div>
         </div>
-        <img src="Main-Image.jpg" alt="프로필 사진" class="photo"/>
-      </div>
+
+        <div class="section" id="skills">
+            <h2>기술 스택</h2>
+            <p>Front End : React</p>
+            <p>Back End : Spring Boot, Flask</p>
+            <p>DBMS : MySQL, SQL Server, OracleDB</p>
+            <p>Programing Languages : C, C++, C#, JavaScript, Java, Python</p>
+            <p>Services : AWS, Git</p>
+            <p>Operating System : Linux, Windows</p>
+            <p>Others : Unity Engine, Raspberry Pi, Arduino Uno</p>
+        </div>
+
+        <div class="section" id="Experiences">
+            <h2>활용 경험</h2>
+            <ul>
+                <li>C</li>
+                <ul><li>MySQL DB접근에 대한 나만의 Shell Skript</li></ul>
+                <ul><li>실시간 채팅 프로그램</li></ul>
+                <li>C++</li>
+                <ul><li>Arduino Uno를 활용한 기상정보 LCD 화면 출력</li></ul>
+                <ul><li>Abot BFS알고리즘을 통한 자율주행 로봇</li></ul>
+                <li>C#</li>
+                <ul><li>Unity엔진을 활용한 Hero's Havest 게임</li></ul>
+                <li>Java</li>
+                <ul><li>SpringBoot 백엔드를 사용한 감정일지 사이트</li></ul>
+                <li>Java Script</li>
+                <ul><li>Chart JS : 백엔드 서버 데이터를 기반으로 재무그래프 표현</li></ul>
+                <ul><li>React : ToDo List 사이트 구현</li></ul>
+                <li>Python</li>
+                <ul><li>Flask 백엔드를 활용한 실시간 확인 Yolo v5객체인식 카메라</li></ul>
+            </ul>
+        </div>
+
+        <div class="section" id="portpolio">
+            <h2>포트폴리오</h2>
+            <p><strong>졸업작품 프로젝트</strong> - Unity 2D TopView Farming Simulation RPG : Hero's Harvest 게임프로젝트 (2025.03 ~ 2025.11)</p>
+            <p>∙ 요구사항 분석 및 DataBase 모델링 (ERD)</p>
+            <p>∙ AWS를 활용한 컴퓨팅 환경 구축</p>
+            <p>. Yolo V5를 이용한 객체인식 방범 카메라</p>
+        </div>
+
+        <div class="section" id ="education">
+            <h2>교육</h2>
+            <p><strong>동양미래대학교</strong> - 컴퓨터소프트웨어공학과 전문학사 (2023.03 ~ 2026.02)</p>
+            <p><strong>동양미래대학교</strong> - 컴퓨터소프트웨어공학과 학사 (2026.03 ~ )</p>
+            <p><strong>한국폴리텍대학교 광명융합기술교육원</strong> - 데이터분석 하이테크교육 (2026.03 ~ )</p>
+        </div>
+
+        <div class="section" id="cerificate">
+            <h2>수상 및 자격</h2>
+            <p>∙ SQL 개발자 자격증</p>
+            <p>. Programmers Certified Coding Essential(Java)</p>
+        </div>
+        <div class="footer-divider"></div>
+        
     </div>
-
-    <div class="section" id="skills">
-      <h2>기술 스택</h2>
-      <p>Front End : React</p>
-      <p>Back End : Spring Boot, Flask</p>
-      <p>DBMS : MySQL, SQL Server, OracleDB</p>
-      <p>Programing Languages : C, C++, C#, JavaScript, Java, Python</p>
-      <p>Services : AWS, Git</p>
-      <p>Operating System : Linux, Windows</p>
-      <p>Others : Unity Engine, Raspberry Pi, Arduino Uno</p>
-    </div>
-
-    <div class="section" id="Experiences">
-      <h2>활용 경험</h2>
-      <ul>
-        <li>C</li>
-        <ul><li>MySQL DB접근에 대한 나만의 Shell Skript</li></ul>
-        <ul><li>실시간 채팅 프로그램</li></ul>
-        <li>C++</li>
-        <ul><li>Arduino Uno를 활용한 기상정보 LCD 화면 출력</li></ul>
-        <ul><li>Abot BFS알고리즘을 통한 자율주행 로봇</li></ul>
-        <li>C#</li>
-        <ul><li>Unity엔진을 활용한 Hero's Havest 게임</li></ul>
-        <li>Java</li>
-        <ul><li>SpringBoot 백엔드를 사용한 감정일지 사이트</li></ul>
-        <li>Java Script</li>
-        <ul><li>Chart JS : 백엔드 서버 데이터를 기반으로 재무그래프 표현</li></ul>
-        <ul><li>React : ToDo List 사이트 구현</li></ul>
-        <li>Python</li>
-        <ul><li>Flask 백엔드를 활용한 실시간 확인 Yolo v5객체인식 카메라</li></ul>
-      </ul>
-
-    <!--<div class="section" id="career">
-      <h2>경력</h2>
-      <p><strong>(회사이름)</strong>(직무내용 및 기간)</p>
-    </div> !-->
-
-    <div class="section" id="portpolio">
-        <h2>포트폴리오</h2>
-        <p><strong>졸업작품 프로젝트</strong> - Unity 2D TopView Farming Simulation RPG : Hero's Harvest 게임프로젝트 (2025.03 ~ 2025.11)</p>
-        <p>∙ 요구사항 분석 및 DataBase 모델링 (ERD)</p>
-        <p>∙ AWS를 활용한 컴퓨팅 환경 구축</p>
-        <p>. Yolo V5를 이용한 객체인식 방범 카메라</p>
-    </div>
-
-    <div class="section" id ="education">
-        <h2>교육</h2>
-        <p><strong>동양미래대학교</strong> - 컴퓨터소프트웨어공학과 전문학사 (2023.03 ~ 2026.02)</p>
-        <p><strong>동양미래대학교</strong> - 컴퓨터소프트웨어공학과 학사 (2026.03 ~ )</p>
-        <p><strong>한국폴리텍대학교 광명융합기술교육원</strong> - 데이터분석 하이테크교육 (2026.03 ~ )</p>
-    </div>
-
-    <div class="section" id="cerificate">
-        <h2>수상 및 자격</h2>
-        <p>∙ SQL 개발자 자격증</p>
-        <p>. Programmers Certified Coding Essential(Java)</p>
-    </div>
-
-  </div>
 </body>
 </html>
