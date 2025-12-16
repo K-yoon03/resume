@@ -3,8 +3,6 @@
 ## [1. Outline]
 ### [1.1. Profile]
 이름: 고윤
-
-  - 생년월일: 2003-10-13
   - Github: https://github.com/K-yoon03
 
 ### [1.2. Education]
